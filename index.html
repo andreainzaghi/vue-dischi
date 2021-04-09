@@ -12,17 +12,26 @@
   <link rel="stylesheet" href="css/style.css">
   <title></title>
 </head>
-<body>
-<div class="container">
-  <div id="root">
-   <div class="albumi">
-       <div v-for="album in emailList" class="single">
-           <img :src="album.poster" alt="">
-           <h3>{{album.title}}</h3>
-           <p>{{album.author}}</p>
-           <p>{{album.year}}</p>
-       </div>
-   </div>
+<div id="root">
+  <header>
+    <select class="generes" name="">
+      <option v-for="gene in generes" :value="gene">{{gene}}</option>
+
+    </select>
+  </header>
+  <body>
+  <div class="container">
+    <div>
+     <div class="albumi">
+         <div v-for="album in emailList" class="single">
+             <img :src="album.poster" alt="">
+             <h3>{{album.title}}</h3>
+             <p>{{album.author}}</p>
+             <p>{{album.year}}</p>
+         </div>
+     </div>
+  </div>
+  </div>
 </div>
 <script type="text/javascript" src="js/script.js"></script>
 </body>

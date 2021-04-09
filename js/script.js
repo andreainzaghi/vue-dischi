@@ -4,6 +4,7 @@ var app = new Vue(
 	el: '#root',
 	data: {
 		emailList: [],
+		generes:[]
 	},
 	methods: {
 
@@ -12,8 +13,15 @@ var app = new Vue(
 
 			axios.get('https://flynn.boolean.careers/exercises/api/array/music')
 			.then( (risposta)=>{
-				this.emailList.push(risposta.data.response);
+				this.emailList=(risposta.data.response);
 				// console.log(this.emailList);
+				this.emailList.forEach((item, i) => {
+					if (this.generes.includes(item.generes) == false) {
+	item.generes.push(item.generes);
+					}
+
+				});
+
 			});
 
 	},
